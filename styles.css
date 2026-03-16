@@ -1,0 +1,323 @@
+/* ========================
+   Reset básico
+======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========================
+   Body y contenedor principal
+======================== */
+body {
+    background-color: #fff8f8; /* muy suave, para que destaque el rojo */
+    color: #333;
+    line-height: 1.5;
+}
+
+/* ========================
+   Header
+======================== */
+header {
+    background-color: #ec5353; /* color principal */
+    color: #fff;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap:clamp(1rem,3vw,4rem);
+    padding: 0.2vw clamp(1rem, 4vw, 2rem);
+}
+
+.cabecera {
+    display: flex;
+    align-items: center;
+    gap: 20vw;
+}
+
+.cabecera img {
+    width: clamp(250px,25vw,300px);
+    height: auto;
+    border-radius: 10px; /* suave borde redondeado */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.titulo-logo h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 0;
+}
+
+.titulo-logo h2 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 0.2rem;
+    font-weight: 400;
+    color: #ffecec; /* rojo suave sobre fondo rojo */
+}
+
+/* ========================
+   Menú principal
+======================== */
+.menu-principal{
+    margin-left:15vw;
+}
+nav.menu-principal ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+nav.menu-principal a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav.menu-principal a:hover {
+    color: #ffdede; /* un tono más claro al pasar el mouse */
+}
+
+/* ========================
+   Contenedor principal
+======================== */
+.contenedor {
+    display: flex;
+    gap: 3vw;
+    padding: 2rem;
+}
+
+/* ========================
+   Menu lateral
+======================== */
+.menu-lateral {
+    width: clamp(150px, 15vw, 300px);
+    background-color: #ffecec;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    flex-shrink: 0;
+}
+
+/* título del menú */
+.menu-lateral h3 {
+    margin-bottom: 15px;
+    color: #ec5353;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #ec5353;
+    padding-bottom: 5px;
+}
+
+/* quitar estilo de lista */
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* espacio entre botones */
+.menu-lateral li {
+    margin-bottom: 10px;
+}
+
+/* botones */
+.menu-lateral a {
+    display: block;
+    background-color: #ec5353;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.menu-lateral a:hover {
+    background-color: #d94444;
+    transform: translateY(-2px);
+}
+
+/* ========================
+   Zona de noticias
+======================== */
+.zona-noticias {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1vw;
+}
+
+.noticia {
+    background-color: #fff0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    
+}
+
+.noticia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.noticia img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.noticia h3 {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    color: #ec5353;
+    min-height: 3em;
+}
+
+/* ========================
+   Footer
+======================== */
+footer {
+    background-color: #ec5353;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #ffdede;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* ========================
+   Responsive
+======================== */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    nav.menu-principal ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+/* ========================
+   PAGINA NOTICIA (detalle)
+======================== */
+
+/* contenedor del contenido de la noticia */
+.contenido-noticia{
+    flex:1;
+}
+
+/* caja principal de la noticia */
+.noticia-completa{
+    background-color:#fff0f0;
+    padding:1.5rem;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    /*Experimento para dejar hueco para las redes sociales */
+    /*width: clamp(450px,51vw,1200px);*/
+}
+
+/* titulo + botones redes */
+.cabecera-noticia{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:1rem;
+    background-color:#ffe0e0;
+    padding:1.5rem;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cabecera-noticia h2{
+    color:#ec5353;
+    
+}
+
+/* botones redes */
+.botones-social{
+    display:flex;
+    gap:1vw;
+    position: fixed;        /* lo hace flotante sobre cualquier contenido */
+    top: 34%;               /* posición vertical en el centro */
+    right: 3.43vw;            /* separación del borde derecho */
+    transform: translateY(-50%); /* centra exactamente verticalmente */
+    display: flex;
+    flex-direction: row ; /* los botones uno encima del otro */
+    gap: 10px;              /* separación entre botones */
+    z-index: 9999;          /* para que quede por encima de todo */
+    background-color: rgba(236, 83, 83, 0.1);
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    
+}
+
+.botones-social img{
+    width: 5vw;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+
+}
+.botones-social a:nth-child(3) img {
+    width: 4.5vw;
+    height: auto;
+    align-items: center;
+}
+.botones-social a:hover{
+        transform: translateY(-2px);
+}
+
+/* texto noticia */
+.texto-noticia{
+    margin-bottom:1.5rem;
+}
+
+/* zona de imagenes */
+.imagenes-noticia figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0.5rem;
+    
+}
+.imagenes-noticia{
+    display:flex;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+
+/* limitar tamaño imagen */
+.imagenes-noticia img{
+    width:25vw;
+    height:auto;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.imagenes-noticia figcaption{
+    width:25vw;
+    text-align: center;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    
+    
+    
+}
